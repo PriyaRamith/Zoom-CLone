@@ -10,29 +10,29 @@ const myPeer = new Peer(undefined, {
   host: 'peerjs-server.herokuapp.com',
   secure: true,
   port: 443,
-  // config: {'iceServers': [
-  //   { url: 'stun:stun.l.google.com:19302' },
-  //   {
-  //     urls: "stun:openrelay.metered.ca:80"
-  //   },
-  //   {
-  //     urls: "turn:openrelay.metered.ca:80",
-  //     username: "openrelayproject",
-  //     credential: "openrelayproject"
-  //   },
-  //   {
-  //     urls: "turn:openrelay.metered.ca:443",
-  //     username: "openrelayproject",
-  //     credential: "openrelayproject"
-  //   },
-  //   {
-  //     urls: "turn:openrelay.metered.ca:443?transport=tcp",
-  //     username: "openrelayproject",
-  //     credential: "openrelayproject"
-  //   },
-  //   { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
+  config: {'iceServers': [
+    { url: 'stun:stun.l.google.com:19302' },
+    {
+      urls: "stun:openrelay.metered.ca:80"
+    },
+    {
+      urls: "turn:openrelay.metered.ca:80",
+      username: "openrelayproject",
+      credential: "openrelayproject"
+    },
+    {
+      urls: "turn:openrelay.metered.ca:443",
+      username: "openrelayproject",
+      credential: "openrelayproject"
+    },
+    {
+      urls: "turn:openrelay.metered.ca:443?transport=tcp",
+      username: "openrelayproject",
+      credential: "openrelayproject"
+    }
+    
 
-  // ]} /* Sample servers, please use appropriate ones */
+  ]} /* Sample servers, please use appropriate ones */
 })
 var  chunks=[] ;
 const myVideo = document.createElement('video')
