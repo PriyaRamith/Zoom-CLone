@@ -1,191 +1,120 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
-:root {
-  --main-darklg: #1d2635;
-  --main-dark: #161d29;
-  --primary-color: #2f80ec;
-  --main-light: #eeeeee;
-  font-family: "Poppins", sans-serif;
-}
-
-* {
+body {
   margin: 0;
   padding: 0;
 }
 
-.header {
+#video-grid{
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 8vh;
-  position: relative;
-  width: 100%;
-  background-color: var(--main-darklg);
+  flex-wrap: wrap;
 }
-
-.logo > h3 {
-  color: var(--main-light);
+video{
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  padding: 8px;
 }
 
 .main {
-  overflow: hidden;
-  height: 92vh;
+  height: 100vh;
   display: flex;
 }
 
 .main__left {
-  flex: 0.7;
+  flex: 0.8;
   display: flex;
   flex-direction: column;
 }
 
-.videos__group {
+.main__right {
+  flex: 0.2
+}
+
+.main__videos {
   flex-grow: 1;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  background-color: var(--main-dark);
+  padding: 40px;
 }
 
-video {
-  height: 300px;
-  border-radius: 1rem;
-  margin: 0.5rem;
-  width: 400px;
-  object-fit: cover;
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
+.main__controls {
+  background-color: #1C1E20;
 }
 
-.options {
-  padding: 1rem;
+.main__right {
+  background-color: #242324;
+  border-left: 1px solid #3D3D42;
+}
+
+.main__controls {
+  color: #D2D2D2;
   display: flex;
-  background-color: var(--main-darklg);
+  justify-content: space-between;
+  padding: 5px;
 }
 
-.options__left {
+.main__controls__block {
   display: flex;
 }
 
-.options__right {
-  margin-left: auto;
-}
-
-.options__button {
+.main__controls__button {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
-  height: 50px;
+  padding: 8px 10px;
+  min-width: 80px;
+  cursor: pointer;
+}
+
+.main__controls__button:hover {
+  background-color: #343434;
   border-radius: 5px;
-  color: var(--main-light);
-  font-size: 1.2rem;
-  width: 50px;
-  margin: 0 0.5rem;
 }
 
-.background__red {
-  background-color: #f6484a;
+.main__controls__button i {
+  font-size: 24px;
 }
 
 .main__right {
   display: flex;
   flex-direction: column;
-  flex: 0.3;
-  background-color: #242f41;
+}
+
+.main__header {
+  padding-top: 5px;
+  color: #F5F5F5;
+  text-align: center;
 }
 
 .main__chat_window {
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
-.main__chat_window::-webkit-scrollbar {
-  display: none;
+.messages{
+  color: white;
+  list-style: none;
 }
 
 .main__message_container {
-  padding: 1rem;
+  padding: 22px 12px;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.main__message_container > input {
-  height: 50px;
-  flex: 1;
-  font-size: 1rem;
-  border-radius: 5px;
-  padding-left: 20px;
+.main__message_container input {
+  flex-grow: 1;
+  background-color: transparent;
   border: none;
+  color: #F5F5F5;
 }
 
-.messages {
-  display: flex;
-  flex-direction: column;
-  margin: 1.5rem;
+.leave_meeting {
+  color: #EB534B;
 }
 
-.message {
-  display: flex;
-  flex-direction: column;
-}
-
-.message > b {
-  color: #eeeeee;
-  display: flex;
-  align-items: center;
-  text-transform: capitalize;
-}
-
-.message > b > i {
-  margin-right: 0.7rem;
-  font-size: 1.5rem;
-}
-
-.message > span {
-  background-color: #eeeeee;
-  margin: 1rem 0;
-  padding: 1rem;
-  border-radius: 5px;
-}
-
-#video-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-#showChat {
-  display: none;
-}
-
-.header__back {
-  display: none;
-  position: absolute;
-  font-size: 1.3rem;
-  top: 17px;
-  left: 28px;
-  color: #fff;
-}
-
-@media (max-width: 700px) {
-  .main__right {
-    display: none;
-  }
-  .main__left {
-    width: 100%;
-    flex: 1;
-  }
-
-  video {
-    height: auto;
-    width: 100%;
-  }
-
-  #showChat {
-    display: flex;
-  }
+.unmute, .stop {
+  color: #CC3B33;
 }
